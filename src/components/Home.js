@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 
 const Home = props => {
     return (
         <div>
-            { props.isAuth ? "You are logged in" : ""}
-            <button>Sign Out</button>
+            { props.isAuth ?  
+                <Typography variant="h6" gutterBottom>
+                    You are logged in
+                </Typography>
+            : "" }
+            <Button variant="contained" color="primary" onClick={props.handleLogout}>
+                Sign Out 
+            </Button>
         </div>
     )
 }
